@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { StickyMobileCTA } from './components/StickyMobileCTA';
+import { Chatbot } from './components/Chatbot';
 
 // Pages
 import { Home } from './pages/Home';
@@ -38,6 +39,7 @@ const App: React.FC = () => {
             <Route path="/eligibility" element={<Eligibility />} />
           </Routes>
         </main>
+        <Chatbot />
         <Footer />
         <StickyMobileCTA />
       </div>

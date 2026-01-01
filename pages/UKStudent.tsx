@@ -1,10 +1,28 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { TestimonialSection } from '../components/TestimonialSection';
 import { CheckCircle, AlertCircle } from 'lucide-react';
 
 export const UKStudent: React.FC = () => {
   const navigate = useNavigate();
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Michael Thompson",
+      role: "HND Construction",
+      quote: "I needed a qualification to move up to site manager. MCKI found me a course that ran on weekends.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150"
+    },
+    {
+      id: 2,
+      name: "Lisa Wong",
+      role: "BA Business Top-Up",
+      quote: "After my HND, I wasn't sure how to finish my degree. They guided me through the top-up process smoothly.",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-mcki-grey">
@@ -96,6 +114,12 @@ export const UKStudent: React.FC = () => {
 
         </div>
       </section>
+
+      <TestimonialSection 
+        title="Local Student Success" 
+        subtitle="See how we've helped students in London, Birmingham, and Manchester."
+        testimonials={testimonials} 
+      />
     </div>
   );
 };

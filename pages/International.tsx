@@ -1,10 +1,28 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { TestimonialSection } from '../components/TestimonialSection';
 import { Globe, BookOpen, FileCheck, MessageCircle } from 'lucide-react';
 
 export const International: React.FC = () => {
   const navigate = useNavigate();
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Priya Sharma",
+      role: "MSc Data Science",
+      quote: "The interview preparation was a lifesaver. The mock questions were exactly what the university asked me.",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150&h=150"
+    },
+    {
+      id: 2,
+      name: "Oluwaseun Adebayo",
+      role: "MBA International",
+      quote: "MCKI helped me sort through the confusion of different university requirements. Highly recommended for Nigerian students.",
+      image: "https://images.unsplash.com/photo-1531384441138-2736e62e0f19?auto=format&fit=crop&q=80&w=150&h=150"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -63,8 +81,8 @@ export const International: React.FC = () => {
               </div>
               <div className="hidden md:block relative h-full min-h-[400px]">
                  <img 
-                   src="https://picsum.photos/800/800" 
-                   alt="International Student" 
+                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800&h=800" 
+                   alt="International Students Group" 
                    className="absolute inset-0 w-full h-full object-cover"
                  />
                  <div className="absolute inset-0 bg-blue-900/30"></div>
@@ -72,6 +90,12 @@ export const International: React.FC = () => {
            </div>
         </div>
       </section>
+
+      <TestimonialSection 
+        title="Global Student Success" 
+        subtitle="From applications to arrival, here's what our students say."
+        testimonials={testimonials} 
+      />
     </div>
   );
 };

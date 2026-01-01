@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { StudentType } from '../types';
 import { Check, ChevronRight, User, MapPin, Book, FileText } from 'lucide-react';
+import { CountrySelect } from '../components/CountrySelect';
 
 export const IntakeForm: React.FC = () => {
   const navigate = useNavigate();
@@ -18,6 +19,10 @@ export const IntakeForm: React.FC = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleCountryChange = (value: string) => {
+    setFormData({ ...formData, country: value });
   };
 
   const nextStep = () => setStep(step + 1);
@@ -116,7 +121,11 @@ export const IntakeForm: React.FC = () => {
                 {type === StudentType.INTERNATIONAL && (
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Country of Residence <span className="text-mcki-gold">*</span></label>
-                    <input required name="country" onChange={handleInputChange} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-mcki-blue focus:border-mcki-blue" />
+                    <CountrySelect 
+                      value={formData.country || ''} 
+                      onChange={handleCountryChange} 
+                      required 
+                    />
                   </div>
                 )}
               </div>

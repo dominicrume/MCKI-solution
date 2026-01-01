@@ -1,10 +1,35 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { TestimonialSection } from '../components/TestimonialSection';
 import { ArrowRight, BookOpen, CheckCircle, Globe, Users } from 'lucide-react';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Jenkins",
+      role: "HND Business Student",
+      quote: "I didn't think I could go back to education while working. MCKI showed me the 2-day schedule options and helped with the finance application.",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150"
+    },
+    {
+      id: 2,
+      name: "Ahmed Al-Fayed",
+      role: "MSc Management",
+      quote: "The visa guidance was critical. They checked every document before I submitted, and I got my CAS without any delays.",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150"
+    },
+    {
+      id: 3,
+      name: "Elena Popova",
+      role: "BSc Health & Social Care",
+      quote: "Very professional team. They were honest about my eligibility from the start and didn't make false promises.",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150"
+    }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -29,8 +54,8 @@ export const Home: React.FC = () => {
           </div>
           <div className="hidden md:block relative">
              <img 
-               src="https://picsum.photos/600/400" 
-               alt="Student Success" 
+               src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=600&h=400" 
+               alt="University Campus Life" 
                className="rounded-lg shadow-2xl border-4 border-white/10"
              />
              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg max-w-xs">
@@ -116,6 +141,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialSection testimonials={testimonials} className="bg-mcki-grey/30" />
 
       {/* How it Works */}
       <section className="py-20 bg-mcki-grey">
